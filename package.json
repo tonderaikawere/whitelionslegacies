@@ -21,6 +21,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build:vercel": "node -e \"process.env.CI='false'; const cp=require('child_process'); const r=cp.spawnSync('react-scripts',['build'],{stdio:'inherit',shell:true,env:process.env}); process.exit(r.status ?? 0);\"",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

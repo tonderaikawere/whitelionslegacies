@@ -1,0 +1,5 @@
+{
+  "buildCommand": "npm run build:vercel",
+  "outputDirectory": "build",
+  "framework": "create-react-app"
+}
