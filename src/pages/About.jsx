@@ -51,7 +51,9 @@ const About = () => {
 
                   <div>
                     <h6 className="section__subtitle">Need Any Help?</h6>
-                    <h4>+263 78 252 8050</h4>
+                    <h4>
+                      <a href="tel:+263782528050">+263 78 252 8050</a>
+                    </h4>
                   </div>
                 </div>
               </div>

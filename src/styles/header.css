@@ -58,6 +58,15 @@
   color: #c9a227;
  }
 
+ .header__info-item a {
+  color: #fff;
+  text-decoration: none;
+ }
+
+ .header__info-item a:hover {
+  color: #c9a227;
+ }
+
  .header__bar {
   background: #fff;
  }

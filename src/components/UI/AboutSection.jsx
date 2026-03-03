@@ -81,11 +81,11 @@ const AboutSection = ({ aboutClass }) => {
               <div className="about__cta mt-4">
                 <div className="about__cta-item">
                   <i className="ri-phone-line"></i>
-                  <span className="section__description mb-0">+263 78 252 8050</span>
+                  <a className="section__description mb-0" href="tel:+263782528050">+263 78 252 8050</a>
                 </div>
                 <div className="about__cta-item">
                   <i className="ri-mail-line"></i>
-                  <span className="section__description mb-0">contact@whitelionslegacies.com</span>
+                  <a className="section__description mb-0" href="mailto:contact@whitelionslegacies.com">contact@whitelionslegacies.com</a>
                 </div>
               </div>
             </div>

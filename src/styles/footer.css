@@ -54,6 +54,21 @@
   font-weight: 300;
 }
 
+.office__info a,
+.footer__bottom a,
+.footer .section__description a {
+  color: rgba(255, 255, 255, 0.715);
+  text-decoration: none;
+  font-weight: 300;
+  transition: 0.3s;
+}
+
+.office__info a:hover,
+.footer__bottom a:hover,
+.footer .section__description a:hover {
+  color: #c9a227;
+}
+
 .newsletter {
   display: flex;
   align-items: center;

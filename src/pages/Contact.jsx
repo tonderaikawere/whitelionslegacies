@@ -85,14 +85,15 @@ const Contact = () => {
                 <div className=" d-flex align-items-center gap-2">
                   <h6 className="fs-6 mb-0">Phone:</h6>
                   <p className="section__description mb-0">
-                    +263 78 252 8050 / +263 71 626 4988
+                    <a href="tel:+263782528050">+263 78 252 8050</a> /{" "}
+                    <a href="tel:+263716264988">+263 71 626 4988</a>
                   </p>
                 </div>
 
                 <div className=" d-flex align-items-center gap-2">
                   <h6 className="mb-0 fs-6">Email:</h6>
                   <p className="section__description mb-0">
-                    contact@whitelionslegacies.com
+                    <a href="mailto:contact@whitelionslegacies.com">contact@whitelionslegacies.com</a>
                   </p>
                 </div>
 

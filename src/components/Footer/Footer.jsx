@@ -85,9 +85,14 @@ const Footer = () => {
             <div className="mb-4">
               <h5 className="footer__link-title mb-4">Head Office</h5>
               <p className="office__info">Gweru CBD, Zimbabwe</p>
-              <p className="office__info">Phone: +263 78 252 8050 / +263 71 626 4988</p>
+              <p className="office__info">
+                Phone: <a href="tel:+263782528050">+263 78 252 8050</a> /{" "}
+                <a href="tel:+263716264988">+263 71 626 4988</a>
+              </p>
 
-              <p className="office__info">Email: contact@whitelionslegacies.com</p>
+              <p className="office__info">
+                Email: <a href="mailto:contact@whitelionslegacies.com">contact@whitelionslegacies.com</a>
+              </p>
 
               <p className="office__info">Mon - Sat: 8am - 5pm</p>
               <p className="office__info">Sun: 10am - 2pm</p>
@@ -98,7 +103,7 @@ const Footer = () => {
             <div className="mb-4">
               <h5 className="footer__link-title">Newsletter</h5>
               <p className="section__description">
-                Subscribe by emailing contact@kawerifytech.com
+                Subscribe by emailing <a href="mailto:contact@kawerifytech.com">contact@kawerifytech.com</a>
               </p>
               <div className="newsletter">
                 <input type="email" placeholder="Email" />
@@ -118,7 +123,7 @@ const Footer = () => {
             <div className="footer__bottom">
               <p className="section__description d-flex align-items-center justify-content-center gap-1 pt-4">
                 <i className="ri-copyright-line"></i>Copyright {year}, Developed by
-                Kawerify Tech. All rights reserved.
+                <a href="https://kawerifytech.com" target="_blank" rel="noreferrer">Kawerify Tech</a>. All rights reserved.
               </p>
             </div>
           </Col>

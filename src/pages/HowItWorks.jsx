@@ -76,8 +76,9 @@ Even after purchase, you can contact us for guidance. We can also advise on rout
 
 10. Contact
 If you are ready to buy or want to start an import-to-order request:
-Phone: +263 78 252 8050 / +263 71 626 4988
-Email: contact@whitelionslegacies.com
+
+CONTACT_BLOCK_COMPONENT
+
 Office hours: Mon - Sat 8am - 5pm, Sun 10am - 2pm
 Location: Gweru CBD, Zimbabwe
 
@@ -239,6 +240,18 @@ Always verify payment instructions. Do not rely on forwarded payment details fro
 
   const paragraphs = howText.split("\n\n");
 
+  const contactBlock = (
+    <>
+      <p className="section__description mb-0">
+        Phone: <a href="tel:+263782528050">+263 78 252 8050</a> /{" "}
+        <a href="tel:+263716264988">+263 71 626 4988</a>
+      </p>
+      <p className="section__description mb-0">
+        Email: <a href="mailto:contact@whitelionslegacies.com">contact@whitelionslegacies.com</a>
+      </p>
+    </>
+  );
+
   return (
     <Helmet title="How It Works">
       <CommonSection title="How It Works" />
@@ -246,11 +259,17 @@ Always verify payment instructions. Do not rely on forwarded payment details fro
         <Container>
           <Row className="justify-content-center">
             <Col lg="10">
-              {paragraphs.map((text, idx) => (
-                <p key={idx} className="section__description">
-                  {text}
-                </p>
-              ))}
+              {paragraphs.map((text, idx) => {
+                if (text.trim() === "CONTACT_BLOCK_COMPONENT") {
+                  return <React.Fragment key={idx}>{contactBlock}</React.Fragment>;
+                }
+
+                return (
+                  <p key={idx} className="section__description">
+                    {text}
+                  </p>
+                );
+              })}
             </Col>
           </Row>
         </Container>

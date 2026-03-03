@@ -93,7 +93,9 @@ We encourage you to contact us first with any complaints. We aim to resolve issu
 We may update these Terms from time to time. Updated Terms will be posted on the Site. Continued use after changes means you accept the updated Terms.
 
 22. Contact
-If you have questions about these Terms or want to discuss an enquiry, contact us at contact@whitelionslegacies.com or call +263 78 252 8050 / +263 71 626 4988.
+If you have questions about these Terms or want to discuss an enquiry:
+
+CONTACT_BLOCK_COMPONENT
 
 Important note: This Terms & Conditions page is provided for general guidance for users of the Site. For specific transactions, additional terms may apply.
 
@@ -149,7 +151,9 @@ These Terms, together with the Privacy Policy and any other notices on the Site,
 These Terms are written in English. If a translation is provided, the English version will prevail to the extent permitted by law.
 
 40. Contact Details
-For enquiries or questions about these Terms, contact White Lions Legacies via email at contact@whitelionslegacies.com or call +263 78 252 8050 / +263 71 626 4988.
+For enquiries or questions about these Terms:
+
+CONTACT_BLOCK_COMPONENT
 
 41. Notices and Written Confirmations
 Where these Terms mention a requirement for something to be “confirmed in writing”, it means confirmed by an official White Lions Legacies communication channel (for example, email, WhatsApp message from our official numbers, or a signed/letterheaded document). A verbal conversation may be helpful for speed, but written confirmation is important to avoid misunderstandings.
@@ -300,6 +304,18 @@ If you have concerns, contact us first for resolution. Provide clear details and
 
   const paragraphs = termsText.split("\n\n");
 
+  const contactBlock = (
+    <>
+      <p className="section__description mb-0">
+        Email: <a href="mailto:contact@whitelionslegacies.com">contact@whitelionslegacies.com</a>
+      </p>
+      <p className="section__description mb-0">
+        Phone: <a href="tel:+263782528050">+263 78 252 8050</a> /{" "}
+        <a href="tel:+263716264988">+263 71 626 4988</a>
+      </p>
+    </>
+  );
+
   return (
     <Helmet title="Terms & Conditions">
       <CommonSection title="Terms & Conditions" />
@@ -307,11 +323,17 @@ If you have concerns, contact us first for resolution. Provide clear details and
         <Container>
           <Row className="justify-content-center">
             <Col lg="10">
-              {paragraphs.map((text, idx) => (
-                <p key={idx} className="section__description">
-                  {text}
-                </p>
-              ))}
+              {paragraphs.map((text, idx) => {
+                if (text.trim() === "CONTACT_BLOCK_COMPONENT") {
+                  return <React.Fragment key={idx}>{contactBlock}</React.Fragment>;
+                }
+
+                return (
+                  <p key={idx} className="section__description">
+                    {text}
+                  </p>
+                );
+              })}
             </Col>
           </Row>
         </Container>

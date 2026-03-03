@@ -148,7 +148,9 @@ const Header = () => {
                   <i className="ri-map-pin-line"></i> Gweru CBD, Zimbabwe
                 </span>
                 <span className="header__info-item">
-                  <i className="ri-phone-fill"></i> +263 78 252 8050 / +263 71 626 4988
+                  <i className="ri-phone-fill"></i>
+                  <a href="tel:+263782528050">+263 78 252 8050</a> /{" "}
+                  <a href="tel:+263716264988">+263 71 626 4988</a>
                 </span>
                 <span className="header__info-item d-md-none">
                   <i className="ri-time-line"></i> Mon - Sat 8am - 5pm, Sun 10am - 2pm

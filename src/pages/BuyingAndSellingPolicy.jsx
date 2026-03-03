@@ -57,8 +57,9 @@ You agree to provide accurate information, respond to requests in a timely manne
 
 9. Contact
 For enquiries or to start a buying/selling conversation:
-Phone: +263 78 252 8050 / +263 71 626 4988
-Email: contact@whitelionslegacies.com
+
+CONTACT_BLOCK_COMPONENT
+
 Location: Gweru CBD, Zimbabwe
 
 Note: This policy is provided for guidance and does not replace transaction-specific written terms.
@@ -279,6 +280,18 @@ This policy is intended to help customers understand the process. Transaction-sp
 
   const paragraphs = policyText.split("\n\n");
 
+  const contactBlock = (
+    <>
+      <p className="section__description mb-0">
+        Phone: <a href="tel:+263782528050">+263 78 252 8050</a> /{" "}
+        <a href="tel:+263716264988">+263 71 626 4988</a>
+      </p>
+      <p className="section__description mb-0">
+        Email: <a href="mailto:contact@whitelionslegacies.com">contact@whitelionslegacies.com</a>
+      </p>
+    </>
+  );
+
   return (
     <Helmet title="Buying & Selling Policy">
       <CommonSection title="Buying & Selling Policy" />
@@ -286,11 +299,17 @@ This policy is intended to help customers understand the process. Transaction-sp
         <Container>
           <Row className="justify-content-center">
             <Col lg="10">
-              {paragraphs.map((text, idx) => (
-                <p key={idx} className="section__description">
-                  {text}
-                </p>
-              ))}
+              {paragraphs.map((text, idx) => {
+                if (text.trim() === "CONTACT_BLOCK_COMPONENT") {
+                  return <React.Fragment key={idx}>{contactBlock}</React.Fragment>;
+                }
+
+                return (
+                  <p key={idx} className="section__description">
+                    {text}
+                  </p>
+                );
+              })}
             </Col>
           </Row>
         </Container>

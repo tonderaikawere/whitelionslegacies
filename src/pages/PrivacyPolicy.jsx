@@ -91,10 +91,8 @@ We may update this policy to reflect operational changes. Updated versions will 
 
 16. Contact
 If you have questions or want to make a privacy request, contact us:
-White Lions Legacies
-Location: Gweru CBD, Zimbabwe
-Email: contact@whitelionslegacies.com
-Phone: +263 78 252 8050 / +263 71 626 4988
+
+CONTACT_BLOCK_COMPONENT
 
 17. Detailed Examples of Data We May Receive
 When you enquire about a vehicle, you may share details such as your preferred car model, your budget, whether you want a hybrid, whether you want automatic transmission, and your preferred color. You may also tell us your timeline (for example, whether you want a car urgently). These details are treated as part of your enquiry and help us propose suitable options.
@@ -240,6 +238,20 @@ We collect information to respond to enquiries, source vehicles, improve the Sit
 
   const paragraphs = privacyText.split("\n\n");
 
+  const contactBlock = (
+    <>
+      <p className="section__description mb-0">White Lions Legacies</p>
+      <p className="section__description mb-0">Location: Gweru CBD, Zimbabwe</p>
+      <p className="section__description mb-0">
+        Email: <a href="mailto:contact@whitelionslegacies.com">contact@whitelionslegacies.com</a>
+      </p>
+      <p className="section__description mb-0">
+        Phone: <a href="tel:+263782528050">+263 78 252 8050</a> /{" "}
+        <a href="tel:+263716264988">+263 71 626 4988</a>
+      </p>
+    </>
+  );
+
   return (
     <Helmet title="Privacy Policy">
       <CommonSection title="Privacy Policy" />
@@ -247,11 +259,17 @@ We collect information to respond to enquiries, source vehicles, improve the Sit
         <Container>
           <Row className="justify-content-center">
             <Col lg="10">
-              {paragraphs.map((text, idx) => (
-                <p key={idx} className="section__description">
-                  {text}
-                </p>
-              ))}
+              {paragraphs.map((text, idx) => {
+                if (text.trim() === "CONTACT_BLOCK_COMPONENT") {
+                  return <React.Fragment key={idx}>{contactBlock}</React.Fragment>;
+                }
+
+                return (
+                  <p key={idx} className="section__description">
+                    {text}
+                  </p>
+                );
+              })}
             </Col>
           </Row>
         </Container>

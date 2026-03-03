@@ -148,4 +148,4 @@ See `LICENSE`.
 
 ## Credits
 
-Website developed by **Kawerify Tech**.
+Website developed by **[Kawerify Tech](https://kawerifytech.com)**.
